@@ -1,5 +1,6 @@
 package com.CabInvoiceGenerator;
 
+
 import java.util.Objects;
 
 public class InvoiceSummary {
@@ -14,6 +15,11 @@ public class InvoiceSummary {
     }
 
     public InvoiceSummary(int numberOfRides, double totalFare) {
+        this.numberOfRides = numberOfRides;
+        this.totalFare = totalFare;
+    }
+
+    public InvoiceSummary(int numberOfRides, double totalFare, String type) {
         this.numberOfRides = numberOfRides;
         this.totalFare = totalFare;
     }
