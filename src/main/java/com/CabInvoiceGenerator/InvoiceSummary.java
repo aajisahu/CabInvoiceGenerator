@@ -3,6 +3,8 @@ package com.CabInvoiceGenerator;
 import java.util.Objects;
 
 public class InvoiceSummary {
+
+
     int numberOfRides;
     double totalFare;
     double avgFare;

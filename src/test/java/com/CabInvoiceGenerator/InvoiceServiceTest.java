@@ -1,9 +1,18 @@
 package com.CabInvoiceGenerator;
 
 import org.junit.Assert;
+import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class InvoiceServiceTest {
+    InvoiceService invoiceService;
+
+    @Before
+    public void setup() {
+        invoiceService = new InvoiceService();
+    }
+
     @Test
     public void givenDistanceAndTime_ShouldReturnTotalFare() {
         InvoiceService invoiceService = new InvoiceService();
@@ -45,4 +54,11 @@ public class InvoiceServiceTest {
         Assert.assertEquals(expectedInvoices.getInvoiceSummary(), invoiceSummary.getInvoiceSummary());
     }
 
+    @Test
+    public void givenUserId_ShouldReturnInvoiceSummary() {
+
+        InvoiceSummary invoiceSummary = invoiceService.getInvoice(1);
+        InvoiceSummary expectedInvoices = new InvoiceSummary(2, 30);
+        Assert.assertEquals(expectedInvoices.getInvoiceSummary(), invoiceSummary.getInvoiceSummary());
+    }
 }
